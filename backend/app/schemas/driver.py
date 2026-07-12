@@ -1,9 +1,10 @@
 from datetime import date, datetime
 from typing import Optional
-
+from app.db.base import BaseModel
+from app.models.base_model import BaseModel
 from pydantic import BaseModel, ConfigDict, EmailStr
 
-from models.enums import DriverStatus
+from app.models.enums import DriverStatus
 
 
 class DriverCreate(BaseModel):

@@ -12,7 +12,7 @@ from database import get_db
 from models.enums import ExpenseType
 from repositories.expense_repository import ExpenseRepository
 from schemas.expense import ExpenseCreate, ExpenseResponse
-from services.expense_service import ExpenseService
+from backend.app.schemas.services.expense_service import ExpenseService
 
 router = APIRouter(prefix="/expenses", tags=["Expenses"])
 

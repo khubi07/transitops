@@ -17,7 +17,7 @@ from database import get_db
 from models.enums import DriverStatus
 from repositories.driver_repository import DriverRepository
 from schemas.driver import DriverCreate, DriverResponse, DriverUpdate
-from services.driver_service import DriverService
+from backend.app.schemas.services.driver_service import DriverService
 
 router = APIRouter(prefix="/drivers", tags=["Drivers"])
 

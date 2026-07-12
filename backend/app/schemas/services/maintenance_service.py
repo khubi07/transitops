@@ -32,6 +32,8 @@ class MaintenanceService:
 
         record = self.repository.close(record)
         vehicle = self.vehicle_repository.get_by_id(record.vehicle_id)
+        if not vehicle:
+            raise HTTPException(404, "Vehicle not found")
         if vehicle.status != VehicleStatus.RETIRED:
             vehicle.status = VehicleStatus.AVAILABLE
             self.db.commit()

@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.db.database import get_db
 from app.schemas.maintenance import MaintenanceCreate, MaintenanceResponse
-from app.services.maintenance_service import MaintenanceService
+from app.schemas.services.maintenance_service import MaintenanceService
 from app.repositories.maintenance_repository import MaintenanceRepository
 
 router = APIRouter(prefix="/maintenance", tags=["Maintenance"])
