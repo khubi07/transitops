@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 Vehicle Model
 
@@ -14,9 +16,13 @@ Vehicle -> Maintenance
 from sqlalchemy import String, Float
 from sqlalchemy import Enum as SQLEnum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from typing import TYPE_CHECKING
 
 from app.db.base import Base, BaseModel
 from app.models.enums import VehicleStatus
+
+if TYPE_CHECKING:
+    from app.models.maintenance import Maintenance
 
 
 class Vehicle(Base, BaseModel):
@@ -50,10 +56,11 @@ class Vehicle(Base, BaseModel):
     )
     status: Mapped[VehicleStatus] = mapped_column(
         SQLEnum(VehicleStatus),
-        default=VehicleStatus.AVAILABLE,
+        default=VehicleStatus["AVAILABLE"],
     )
 
     maintenance_logs: Mapped[list["Maintenance"]] = relationship(
+        "Maintenance",
         back_populates="vehicle",
     )
 
