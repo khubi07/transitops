@@ -7,7 +7,7 @@ from datetime import date
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from database import get_db
+from app.db.database import get_db
 from repositories.driver_repository import DriverRepository
 from repositories.expense_repository import ExpenseRepository
 from repositories.fuel_log_repository import FuelLogRepository

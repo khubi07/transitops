@@ -8,7 +8,7 @@ from typing import List, Optional
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from database import get_db
+from app.db.database import get_db
 from models.enums import ExpenseType
 from repositories.expense_repository import ExpenseRepository
 from schemas.expense import ExpenseCreate, ExpenseResponse

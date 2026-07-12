@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 
 # NOTE: replace with your actual DB session dependency once
 # Member 1's database setup (engine/session factory) is merged in.
-from database import get_db
+from app.db.database import get_db
 
 from models.enums import DriverStatus
 from repositories.driver_repository import DriverRepository

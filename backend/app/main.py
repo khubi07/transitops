@@ -16,7 +16,7 @@ from app.db.database import engine
 from app.api.trips import router as trip_router
 from app.api.vehicles import router as vehicles_router
 from app.api.maintenance import router as maintenance_router
-from app.api.fuel import router as fuel_router
+from backend.app.api.fuel_logs import router as fuel_router
 from app.api.drivers import router as drivers_router
 from app.api.expenses import router as expenses_router
 from app.api.dashboard import router as dashboard_router
