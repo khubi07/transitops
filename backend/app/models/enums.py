@@ -14,6 +14,10 @@ Using Enums avoids:
 - Typing mistakes
 - Magic strings
 - Inconsistent values
+
+NOTE: this file is the shared, canonical version (as pushed by
+Member 1 / teammate). It replaces the module-local enums.py that
+previously only had DriverStatus + ExpenseCategory.
 """
 
 from enum import Enum
