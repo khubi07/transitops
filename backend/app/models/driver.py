@@ -19,11 +19,11 @@ from typing import TYPE_CHECKING, List
 from sqlalchemy import Date, Enum, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from models.base import Base, BaseModel
-from models.enums import DriverStatus
+from app.models.base import Base, BaseModel
+from app.models.enums import DriverStatus
 
 if TYPE_CHECKING:
-    from models.trip import Trip  # owned by Member 1 - not created yet
+    from app.models.trip import Trip  # owned by Member 1 - not created yet
 
 
 class Driver(Base, BaseModel):
