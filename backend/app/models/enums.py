@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import enum
+
+
+class VehicleStatus(str, enum.Enum):
+=======
 """
 Application Enums
 
@@ -14,12 +20,18 @@ from enum import Enum
 
 
 class VehicleStatus(str, Enum):
+>>>>>>> main
     AVAILABLE = "Available"
     ON_TRIP = "On Trip"
     IN_SHOP = "In Shop"
     RETIRED = "Retired"
 
 
+<<<<<<< HEAD
+class MaintenanceStatus(str, enum.Enum):
+    ACTIVE = "Active"
+    CLOSED = "Closed"
+=======
 class DriverStatus(str, Enum):
     AVAILABLE = "Available"
     ON_TRIP = "On Trip"
@@ -47,3 +59,4 @@ class ExpenseType(str, Enum):
     PARKING = "Parking"
     INSURANCE = "Insurance"
     OTHER = "Other"
+>>>>>>> main

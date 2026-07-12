@@ -1,11 +1,14 @@
-"""
-SQLAlchemy Base
+from datetime import datetime
 
-Every model inherits from this Base.
-"""
+from sqlalchemy import DateTime, func
+from sqlalchemy.orm import declarative_base, Mapped, mapped_column
 
-from sqlalchemy.orm import DeclarativeBase
+Base = declarative_base()
 
 
-class Base(DeclarativeBase):
-    pass
+class BaseModel:
+    """Shared columns every table must inherit. Never add id/created_at/updated_at manually."""
+
+    id: Mapped[int] = mapped_column(primary_key=True, index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())

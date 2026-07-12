@@ -1,3 +1,4 @@
+
 """
 Database Configuration
 
@@ -9,18 +10,11 @@ Responsibilities
 
 Author: Team TransitOps
 """
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from app.core.config import settings
 
-from sqlalchemy import create_engine  # type: ignore[import]
-from sqlalchemy.orm import sessionmaker  # type: ignore[import]
-
-DATABASE_URL = "sqlite:///./transitops.db"
-# Later you can change to PostgreSQL:
-# postgresql://username:password@localhost/transitops
-
-engine = create_engine(
-    DATABASE_URL,
-    connect_args={"check_same_thread": False}
-)
+engine = create_engine(settings.DATABASE_URL)
 
 SessionLocal = sessionmaker(
     autocommit=False,
@@ -39,6 +33,7 @@ def get_db():
 
     try:
         yield db
+
 
     finally:
         db.close()
