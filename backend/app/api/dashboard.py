@@ -12,7 +12,7 @@ from repositories.driver_repository import DriverRepository
 from repositories.expense_repository import ExpenseRepository
 from repositories.fuel_log_repository import FuelLogRepository
 from schemas.dashboard import FleetKPIResponse
-from services.dashboard_service import DashboardService
+from backend.app.schemas.services.dashboard_service import DashboardService
 
 router = APIRouter(prefix="/dashboard", tags=["Dashboard"])
 

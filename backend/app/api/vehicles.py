@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.db.database import get_db
 from app.schemas.vehicle import VehicleCreate, VehicleUpdate, VehicleResponse
-from app.services.vehicle_service import VehicleService
+from app.schemas.services.vehicle_service import VehicleService
 
 router = APIRouter(prefix="/vehicles", tags=["Vehicles"])
 

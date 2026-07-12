@@ -19,6 +19,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base, BaseModel
 from app.models.enums import MaintenanceStatus
+from app.models.vehicle import Vehicle
 
 
 class Maintenance(Base, BaseModel):
@@ -42,7 +43,7 @@ class Maintenance(Base, BaseModel):
     )
     status: Mapped[MaintenanceStatus] = mapped_column(
         SQLEnum(MaintenanceStatus),
-        default=MaintenanceStatus.ACTIVE,
+        default=MaintenanceStatus.PENDING,
     )
 
     vehicle: Mapped["Vehicle"] = relationship(

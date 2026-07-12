@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import enum
-
-
-class VehicleStatus(str, enum.Enum):
-=======
 """
 Application Enums
 
@@ -14,28 +8,18 @@ Using Enums avoids:
 - Typing mistakes
 - Magic strings
 - Inconsistent values
-
-NOTE: this file is the shared, canonical version (as pushed by
-Member 1 / teammate). It replaces the module-local enums.py that
-previously only had DriverStatus + ExpenseCategory.
 """
 
 from enum import Enum
 
 
 class VehicleStatus(str, Enum):
->>>>>>> main
     AVAILABLE = "Available"
     ON_TRIP = "On Trip"
     IN_SHOP = "In Shop"
     RETIRED = "Retired"
 
 
-<<<<<<< HEAD
-class MaintenanceStatus(str, enum.Enum):
-    ACTIVE = "Active"
-    CLOSED = "Closed"
-=======
 class DriverStatus(str, Enum):
     AVAILABLE = "Available"
     ON_TRIP = "On Trip"
@@ -63,4 +47,3 @@ class ExpenseType(str, Enum):
     PARKING = "Parking"
     INSURANCE = "Insurance"
     OTHER = "Other"
->>>>>>> main

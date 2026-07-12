@@ -19,7 +19,7 @@ from repositories.driver_repository import DriverRepository
 from repositories.expense_repository import ExpenseRepository
 from repositories.fuel_log_repository import FuelLogRepository
 from schemas.dashboard import FleetKPIResponse
-from services.expense_service import ExpenseService
+from backend.app.schemas.services.expense_service import ExpenseService
 from services.fuel_log_service import FuelLogService
 
 
@@ -39,7 +39,7 @@ class DashboardService:
         total_fuel_cost = self.fuel_log_service.total_fuel_cost(start, end)
         total_expense_cost = self.expense_service.total_operational_cost(start, end)
 
-        from services.driver_service import DriverService  # local import avoids a cycle
+        from backend.app.schemas.services.driver_service import DriverService  # local import avoids a cycle
 
         driver_service = DriverService(self.driver_repo)
         expiring = driver_service.drivers_with_expiring_license()
