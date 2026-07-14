@@ -19,14 +19,14 @@ from typing import TYPE_CHECKING, Optional
 from sqlalchemy import Date, Enum, ForeignKey, Numeric, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.models.base_model import Base, BaseModel
+from app.models.base_model import BaseModel
 from app.models.enums import ExpenseType
 
 if TYPE_CHECKING:
     from models.trip import Trip  # owned by Member 1 - not created yet
 
 
-class Expense(Base, BaseModel):
+class Expense( BaseModel):
 
     __tablename__ = "expenses"
 
