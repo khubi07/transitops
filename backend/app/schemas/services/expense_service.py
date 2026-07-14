@@ -10,10 +10,10 @@ from typing import List, Optional
 
 from fastapi import HTTPException, status as http_status
 
-from models.enums import ExpenseType
-from models.expense import Expense
-from repositories.expense_repository import ExpenseRepository
-from schemas.expense import ExpenseCreate
+from app.models.enums import ExpenseType
+from app.models.expense import Expense
+from app.repositories.expense_repository import ExpenseRepository
+from app.schemas.expense import ExpenseCreate
 
 
 class ExpenseService:

@@ -4,7 +4,7 @@ from typing import Optional
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from models.enums import ExpenseType
+from app.models.enums import ExpenseType
 
 
 class ExpenseCreate(BaseModel):

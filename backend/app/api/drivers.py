@@ -14,10 +14,10 @@ from sqlalchemy.orm import Session
 # Member 1's database setup (engine/session factory) is merged in.
 from app.db.database import get_db
 
-from models.enums import DriverStatus
-from repositories.driver_repository import DriverRepository
-from schemas.driver import DriverCreate, DriverResponse, DriverUpdate
-from backend.app.schemas.services.driver_service import DriverService
+from app.models.enums import DriverStatus
+from app.repositories.driver_repository import DriverRepository
+from app.schemas.driver import DriverCreate, DriverResponse, DriverUpdate
+from app.schemas.services.driver_service import DriverService
 
 router = APIRouter(prefix="/drivers", tags=["Drivers"])
 

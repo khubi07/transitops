@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 from app.db.database import get_db
 from app.repositories.fuel_log_repository import FuelLogRepository
 from app.schemas.fuel_log import FuelLogCreate, FuelLogResponse
-from app.services.fuel_log_service import FuelLogService
+from app.schemas.services.fuel_log_service import FuelLogService
 
 router = APIRouter(prefix="/fuel-logs", tags=["Fuel Logs"])
 

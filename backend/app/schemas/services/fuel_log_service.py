@@ -10,9 +10,9 @@ from typing import List, Optional
 
 from fastapi import HTTPException, status as http_status
 
-from models.fuel_log import FuelLog
-from repositories.fuel_log_repository import FuelLogRepository
-from schemas.fuel_log import FuelLogCreate
+from app.models.fuel_log import FuelLog
+from app.repositories.fuel_log_repository import FuelLogRepository
+from app.schemas.fuel_log import FuelLogCreate
 
 
 class FuelLogService:

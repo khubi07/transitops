@@ -9,10 +9,10 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.db.database import get_db
-from models.enums import ExpenseType
-from repositories.expense_repository import ExpenseRepository
-from schemas.expense import ExpenseCreate, ExpenseResponse
-from backend.app.schemas.services.expense_service import ExpenseService
+from app.models.enums import ExpenseType
+from app.repositories.expense_repository import ExpenseRepository
+from app.schemas.expense import ExpenseCreate, ExpenseResponse
+from app.schemas.services.expense_service import ExpenseService
 
 router = APIRouter(prefix="/expenses", tags=["Expenses"])
 

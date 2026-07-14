@@ -10,8 +10,8 @@ from typing import List, Optional
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from models.driver import Driver
-from models.enums import DriverStatus
+from app.models.driver import Driver
+from app.models.enums import DriverStatus
 
 
 class DriverRepository:

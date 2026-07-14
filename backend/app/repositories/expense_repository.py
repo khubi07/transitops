@@ -10,8 +10,8 @@ from typing import List, Optional
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from models.expense import Expense
-from models.enums import ExpenseType
+from app.models.expense import Expense
+from app.models.enums import ExpenseType
 
 
 class ExpenseRepository:

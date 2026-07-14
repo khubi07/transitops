@@ -10,10 +10,10 @@ from typing import List, Optional
 
 from fastapi import HTTPException, status as http_status
 
-from models.driver import Driver
-from models.enums import DriverStatus
-from repositories.driver_repository import DriverRepository
-from schemas.driver import DriverCreate, DriverUpdate
+from app.models.driver import Driver
+from app.models.enums import DriverStatus
+from app.repositories.driver_repository import DriverRepository
+from app.schemas.driver import DriverCreate, DriverUpdate
 
 LICENSE_EXPIRY_WARNING_DAYS = 30
 

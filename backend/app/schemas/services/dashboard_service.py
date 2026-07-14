@@ -15,12 +15,12 @@ aggregation isolated here.
 
 from datetime import date
 
-from repositories.driver_repository import DriverRepository
-from repositories.expense_repository import ExpenseRepository
-from repositories.fuel_log_repository import FuelLogRepository
-from schemas.dashboard import FleetKPIResponse
-from backend.app.schemas.services.expense_service import ExpenseService
-from services.fuel_log_service import FuelLogService
+from app.repositories.driver_repository import DriverRepository
+from app.repositories.expense_repository import ExpenseRepository
+from app.repositories.fuel_log_repository import FuelLogRepository
+from app.schemas.dashboard import FleetKPIResponse
+from app.schemas.services.expense_service import ExpenseService
+from app.schemas.services.fuel_log_service import FuelLogService
 
 
 class DashboardService:

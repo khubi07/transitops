@@ -8,11 +8,11 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.db.database import get_db
-from repositories.driver_repository import DriverRepository
-from repositories.expense_repository import ExpenseRepository
-from repositories.fuel_log_repository import FuelLogRepository
-from schemas.dashboard import FleetKPIResponse
-from backend.app.schemas.services.dashboard_service import DashboardService
+from app.repositories.driver_repository import DriverRepository
+from app.repositories.expense_repository import ExpenseRepository
+from app.repositories.fuel_log_repository import FuelLogRepository
+from app.schemas.dashboard import FleetKPIResponse
+from app.schemas.services.dashboard_service import DashboardService
 
 router = APIRouter(prefix="/dashboard", tags=["Dashboard"])
 
