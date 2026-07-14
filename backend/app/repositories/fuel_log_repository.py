@@ -5,7 +5,6 @@ Per folder rules: repositories/ ONLY interacts with the database.
 """
 
 from datetime import date
-from typing import List, Optional
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -14,7 +13,6 @@ from app.models.fuel_log import FuelLog
 
 
 class FuelLogRepository:
-
     def __init__(self, db: Session):
         self.db = db
 
@@ -24,14 +22,14 @@ class FuelLogRepository:
         self.db.refresh(fuel_log)
         return fuel_log
 
-    def get_by_id(self, fuel_log_id: int) -> Optional[FuelLog]:
+    def get_by_id(self, fuel_log_id: int) -> FuelLog | None:
         return self.db.get(FuelLog, fuel_log_id)
 
-    def list_by_trip(self, trip_id: int) -> List[FuelLog]:
+    def list_by_trip(self, trip_id: int) -> list[FuelLog]:
         stmt = select(FuelLog).where(FuelLog.trip_id == trip_id)
         return list(self.db.execute(stmt).scalars().all())
 
-    def list_between(self, start: date, end: date) -> List[FuelLog]:
+    def list_between(self, start: date, end: date) -> list[FuelLog]:
         stmt = select(FuelLog).where(
             FuelLog.fuel_date >= start,
             FuelLog.fuel_date <= end,
