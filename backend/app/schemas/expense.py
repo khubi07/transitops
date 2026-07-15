@@ -1,8 +1,7 @@
-
 from datetime import date, datetime
 from typing import Optional
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, Field
 
 from app.models.enums import ExpenseType
 
@@ -16,8 +15,6 @@ class ExpenseCreate(BaseModel):
 
 
 class ExpenseResponse(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-
     id: int
     trip_id: Optional[int] = None
     category: ExpenseType
@@ -26,3 +23,6 @@ class ExpenseResponse(BaseModel):
     expense_date: date
     created_at: datetime
     updated_at: datetime
+
+    class Config:
+        from_attributes = True

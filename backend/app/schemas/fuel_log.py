@@ -1,6 +1,6 @@
 from datetime import date, datetime
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, Field
 
 
 class FuelLogCreate(BaseModel):
@@ -12,8 +12,6 @@ class FuelLogCreate(BaseModel):
 
 
 class FuelLogResponse(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-
     id: int
     trip_id: int
     liters: float
@@ -22,3 +20,6 @@ class FuelLogResponse(BaseModel):
     fuel_date: date
     created_at: datetime
     updated_at: datetime
+
+    class Config:
+        from_attributes = True
