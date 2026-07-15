@@ -115,16 +115,16 @@ class Trip(Base, BaseModel):
         back_populates="trips",
     )
 
-    # fuel_logs = relationship(
-    #     "FuelLog",
-    #     back_populates="trip",
-    #     cascade="all, delete-orphan",
-    # )
+    fuel_logs = relationship(
+        "FuelLog",
+        back_populates="trip",
+        cascade="all, delete-orphan",
+    )
 
-    # expenses = relationship(
-    #     "Expense",
-    #     back_populates="trip",
-    # )
+    expenses = relationship(
+        "Expense",
+        back_populates="trip",
+    )
 
     # ------------------------
     # Debug Representation
