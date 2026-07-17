@@ -1,8 +1,7 @@
 from datetime import date, datetime
 from typing import Optional
-from app.db.base import BaseModel
-from app.models.base_model import BaseModel
-from pydantic import BaseModel, ConfigDict, EmailStr
+
+from pydantic import BaseModel, EmailStr
 
 from app.models.enums import DriverStatus
 
@@ -23,8 +22,6 @@ class DriverUpdate(BaseModel):
 
 
 class DriverResponse(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-
     id: int
     name: str
     license_number: str
@@ -34,3 +31,6 @@ class DriverResponse(BaseModel):
     status: DriverStatus
     created_at: datetime
     updated_at: datetime
+
+    class Config:
+        from_attributes = True

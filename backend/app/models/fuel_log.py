@@ -19,13 +19,14 @@ from typing import TYPE_CHECKING
 from sqlalchemy import Date, ForeignKey, Numeric
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from models.base import Base, BaseModel
+# from app.models.base_model import BaseModel
+from app.db.base import Base, BaseModel
 
 if TYPE_CHECKING:
-    from models.trip import Trip  # owned by Member 1 - not created yet
+    from app.models.trip import Trip  
 
 
-class FuelLog(Base, BaseModel):
+class FuelLog(Base,BaseModel):
 
     __tablename__ = "fuel_logs"
 
